@@ -1,3 +1,25 @@
 Perbedaan dalam Distribusi Nilai Abu-abu: Bandingkan histogram dari gambar asli, negatif, dan logaritmik. Bagaimana nilai abu-abu didistribusikan secara berbeda di setiap gambar? Misalnya, apakah transformasi negatif membalikkan distribusi?
 Apakah transformasi logaritmik memampatkan atau memperluas nilai abu- abu?Kapan Transformasi Logaritmik Lebih Berguna: Jelaskan situasi di mana transformasi logaritmik lebih bermanfaat daripada transformasi negatif.
-Pertimbangkan kasus di mana Anda ingin meningkatkan detail di area gelap gambar. Transformasi logaritmik berguna ketika level abu-abu input memiliki rentang nilai yang lebar.
+Pertimbangkan kasus di mana Anda ingin meningkatkan detail di area gelap gambar. Transformasi logaritmik berguna ketika level abu-abu input memiliki rentang nilai yang lebar. Perbedaan Penyebaran Nilai Keabuan antara Ketiga Citra
+
+Penyebaran nilai keabuan (grayscale values) menggambarkan bagaimana intensitas terang–gelap piksel tersebar dalam citra digital (rentang 0–255 untuk citra 8-bit).
+Perbedaan penyebaran dapat dilihat melalui histogram citra, dan secara umum dapat dijelaskan sebagai berikut:
+
+Jenis Citra	Ciri Penyebaran Nilai Keabuan	Contoh Tampilan	Keterangan
+Citra Gelap	Nilai keabuan terkonsentrasi di rentang rendah (0–100)	Dominan warna hitam–abu tua	Kontras rendah, detail area gelap sulit terlihat
+Citra Terang	Nilai keabuan terkonsentrasi di rentang tinggi (150–255)	Dominan warna abu muda–putih	Detail area terang sering hilang (overexposed)
+Citra Kontras Tinggi	Nilai keabuan menyebar luas (0–255)	Jelas perbedaan antara area terang dan gelap	Citra tampak tajam dan detail baik
+Citra Kontras Rendah	Nilai keabuan terkumpul di area sempit (misal 80–160)	Tampak kusam/flat	Perlu peningkatan kontras seperti histogram equalization
+
+Jadi, perbedaan penyebaran nilai keabuan antar ketiga citra menunjukkan perbedaan tingkat kecerahan dan kontras — semakin merata penyebarannya, semakin baik persebaran detail visualnya.
+
+2. Kapan Transformasi Logaritmik Lebih Bermanfaat dibandingkan Negatif
+
+Transformasi logaritmik dan transformasi negatif memiliki fungsi yang berbeda dalam pengolahan citra:
+
+Jenis Transformasi	Rumus Umum	Tujuan	Kapan Digunakan
+Negatif	s = L - 1 - r	Membalikkan intensitas; menonjolkan detail di area terang	Ketika citra terlalu terang dan kamu ingin menonjolkan bagian gelap (misalnya radiografi medis, foto X-ray)
+Logaritmik	s = c × log(1 + r)	Memperluas nilai keabuan di area gelap dan menekan di area terang	Ketika detail penting berada di area gelap, misalnya citra astronomi, citra radar, atau citra dengan perbedaan intensitas sangat besar
+
+Kesimpulan:
+Transformasi logaritmik lebih bermanfaat dibandingkan negatif ketika citra memiliki rentang dinamis tinggi, di mana sebagian besar informasi ada di area gelap — sehingga log transformasi dapat memperjelas detail yang tidak tampak di intensitas rendah.
