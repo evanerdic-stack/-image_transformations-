@@ -1,0 +1,3 @@
+Perbedaan dalam Distribusi Nilai Abu-abu: Bandingkan histogram dari gambar asli, negatif, dan logaritmik. Bagaimana nilai abu-abu didistribusikan secara berbeda di setiap gambar? Misalnya, apakah transformasi negatif membalikkan distribusi?
+Apakah transformasi logaritmik memampatkan atau memperluas nilai abu- abu?Kapan Transformasi Logaritmik Lebih Berguna: Jelaskan situasi di mana transformasi logaritmik lebih bermanfaat daripada transformasi negatif.
+Pertimbangkan kasus di mana Anda ingin meningkatkan detail di area gelap gambar. Transformasi logaritmik berguna ketika level abu-abu input memiliki rentang nilai yang lebar.
